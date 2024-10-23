@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mark's Site</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h1 class="logo">
+        <a href="index.html">Mark McGuire</a>
+      </h1>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1 class="resume-title">Resume</h1>
+      <a href="Mark_McGuire_Resume.pdf" class="resume-download" target="_blank" download>
+            Download Resume <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/></svg>
+      </a>
+      <div class="resume">
+        <section class="section">
+          <h2 class="section-title">Education</h2>
+          <div class="entry">
+            <h3 class="entry-title">California Polytechnic State University</h3>
+            <p class="entry-info">
+              Bachelor of Science in Computer Science, Minor in Mathematics;
+              GPA: 3.517 | Sep. 2023 – Jun. 2027
+            </p>
+          </div>
+          <div class="entry">
+            <h3 class="entry-title">Stanford Continuing Studies</h3>
+            <p class="entry-info">
+                Coursework focused on neural networks and their applicability in gen-AI and LLMs | Jan. 2024 – Mar. 2024
+            </p>
+          </div>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Coursework</h2>
+          <div class="entry">
+            <h3 class="entry-title"></h3>
+            <p class="entry-info"></p>
+            <ul class="course-list">
+                <li>Data Structures</li>
+                <li>Design and Analysis of Algorithms</li>
+                <li>Systems Programming</li>
+                <li>Computer Organization</li>
+                <li>Linear Algebra</li>
+            </ul>
+          </div>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Experience</h2>
+          <div class="entry">
+            <h3 class="entry-title">Expedera</h3>
+            <p class="entry-info">AI/ML Software Engineer | Jun. 2024 - Sep. 2024</p>
+            <p class="entry-description">
+                <ul>
+                    <li><strong>Model Optimization</strong>: Wrote and perfected DFS and DP algorithms to optimize bottlenecks. Achieved an average decrease of 27% in peak memory usage through node-splitting and layer execution order optimizations.</li>
+                    <li><strong>Estimation Tools</strong>: Created internal bash and python scripts that streamlined model estimation, saving  ̃36 dev hours per quarter by increasing productivity and flexibility within workflow.</li>
+                    <li><strong>CV Model Conversion</strong>: Worked on updating and converting legacy implementations of various multimodal computer vision models such as BEVFormer, MMDet3D, and MMCV.</li>
+                    <li><strong>ML Frameworks</strong>: Gained industry experience working with common ML libraries like TensorFlow and PyTorch, and exchange mediums like ONNX.</li>
+                    <li><strong>Collaboration</strong>: Actively participated in code reviews and team meetings, contributing to the continuous improvement of internal tools and processes.</li>
+                </ul>
+            </p>
+          </div>
+          <div class="entry">
+            <h3 class="entry-title">Ramen Nagi</h3>
+            <p class="entry-info">Shift-lead/Head Chef | Aug. 2021 - Jun. 2023</p>
+            <p class="entry-description">
+                <ul>
+                    <li><strong>Shift-Lead</strong>: Started as a server, eventually took on managerial duties like QA and floor. Mentored and trained fellow servers. Led flow of service, instructing servers on orders, running, bussing, etc.</li>
+                    <li><strong>Head-Chef</strong>: Curiosity about cooking/prep process led to technical training. Worked up to head chef/kitchen leader. As leader, ran kitchen and helped conceive and institute practices increasing productivity and efficiency.</li>
+                    <li><strong>Administration & Oversight</strong>: Led closing and opening of restaurant, collecting data at the end of shifts.</li>
+                </ul>
+            </p>
+          </div>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Projects</h2>
+          <div class="entry">
+            <h3 class="entry-title">Sentennial</h3>
+            <p class="entry-description">
+                <ul>
+                    <li><strong>Next.js web app</strong>: Developed and deployed a fully built NextJS blog/personal site using Next’s underlying React functionalities, TypeScript, and Node.</li>
+                    <li><strong>Frontend</strong>: Gained experience with state management, dynamic routing, and responsive design. Used modern TS techniques and leveraged React for dynamic, component-based UI</li>
+                    <li><strong>API & Rendering</strong>: Built API routes to fetch and style Markdown content, added category filtering, and optimized performance with SSG/SSR for better SEO.</li>
+                </ul>
+            </p>
+          </div>
+          <div class="entry">
+            <h3 class="entry-title">Bill Scanner - Hackathon</h3>
+            <p class="entry-description">
+                <ul>
+                    <li><strong>Django web app</strong>: Developed and deployed a Django project that utilized Python’s open-cv and Google’s Tesseract to analyze invoices and paper bills, creating calendar notifications and digital summaries.</li>
+                    <li><strong>ML & CV</strong>: Applied preprocessing techniques like resizing, thresholding, and denoising to enhance image quality for text extraction, integrating with advanced CV libraries and OCR engines for effective file parsing.</li>
+                    <li><strong>Authentication & APIs</strong>: Utilized various Google APIs including Google OAuth to allow users to securely sign in and create calendar events. Created Django middleware to handle permissions and access.</li>
+                </ul>
+            </p>
+          </div>
+          <div class="entry">
+            <h3 class="entry-title">Movie Recommendation System</h3>
+            <p class="entry-description">
+                <ul>
+                    <li><strong>Machine Learning</strong>: Prototyped with Jupyter Notebooks, and mastered ML tools like Pandas, NumPy, and scikit-learn, applying them to public movie dataset modeling.</li>
+                    <li><strong>AWS</strong>: Integrated cloud functionality through the utilization of AWS. Learned about boto3 and s3 buckets.</li>
+                    <li><strong>Project Structure</strong>: Took prototyped code and instituted development best practices to create a working project. Separated code into multiple files and modules, making project accessible and readable.</li>
+                </ul>
+            </p>
+          </div>
+        </section>
+        <section class="section">
+          <h2 class="section-title">Programming Skills</h2>
+          <div class="entry">
+            <h3 class="entry-title">Languages</h3>
+            <ul class="skill-list">
+                <li>Python</li>
+                <li>C/C++</li>
+                <li>Typescript</li>
+                <li>Java</li>
+            </ul>
+          </div>
+          <div class="entry">
+            <h3 class="entry-title">Technologies</h3>
+            <ul class="skill-list">
+                <li>PyTorch</li>
+                <li>Tensorflow</li>
+                <li>Django</li>
+                <li>Next</li>
+                <li>React</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="footer">© 2024 Mark's Site | All Rights Reserved | Made with love ♥</footer>
+  </body>
+</html>
