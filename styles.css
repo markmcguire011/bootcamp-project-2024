@@ -29,7 +29,7 @@ body {
   list-style: none;
 }
 
-.navbar a {
+a {
   color: black;
   padding: 10px;
   margin-right: 10px;
@@ -37,7 +37,7 @@ body {
   opacity: 1;
 }
 
-.navbar a:hover {
+a:hover {
   opacity: 0.8;
 }
 
@@ -130,4 +130,8 @@ form input {
 .submit:hover {
   cursor: pointer;
   opacity: 0.8;
+}
+
+#post-container {
+  max-width: 50vw;
 }
