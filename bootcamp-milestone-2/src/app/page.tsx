@@ -1,10 +1,12 @@
+import Image from "next/image";
+
 export default function Home() {
   return (
     <div className="px-40 py-20 h-screen">
       <h1 className="text-2xl font-bold">About</h1>
       <div className="py-10">
         <div>
-          <img src="bio.jpeg" alt="bio photo" height="250" width="250" />
+          <Image src="/bio.jpeg" alt="bio photo" height={250} width={250} className="rounded"/>
         </div>
         <div>
           <p className="py-2">
