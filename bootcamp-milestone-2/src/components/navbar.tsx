@@ -12,9 +12,15 @@ export default function Navbar() {
           <Link className="opacity-80 hover:opacity-100" href="/">
             Home
           </Link>
-          <Link className="opacity-80 hover:opacity-100" href="/blogs">Blogs</Link>
-          <Link className="opacity-80 hover:opacity-100" href="/resume">Resume</Link>
-          <Link className="opacity-80 hover:opacity-100" href="/about">Contact Me</Link>
+          <Link className="opacity-80 hover:opacity-100" href="/blogs">
+            Blogs
+          </Link>
+          <Link className="opacity-80 hover:opacity-100" href="/resume">
+            Resume
+          </Link>
+          <Link className="opacity-80 hover:opacity-100" href="/contact">
+            Contact Me
+          </Link>
         </div>
       </nav>
     </header>
