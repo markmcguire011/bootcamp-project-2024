@@ -1,6 +1,6 @@
 export default function Home() {
   return (
-    <div className="px-20 py-20 h-screen">
+    <div className="px-40 py-20 h-screen">
       <h1 className="text-2xl font-bold">About</h1>
       <div className="py-10">
         <div>
