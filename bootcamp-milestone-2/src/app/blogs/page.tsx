@@ -15,11 +15,12 @@ async function getBlogs() {
   }
 }
 
-export async function Blogs() {
+export default async function Blogs() {
   const blogs = await getBlogs();
 
   return (
     <div className="px-40 py-20 min-h-screen">
+      <h1 className="text-2xl font-bold">Blogs</h1>
       {blogs
         ? blogs.map((blog) => (
             <BlogPreview

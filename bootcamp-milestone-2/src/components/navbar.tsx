@@ -18,6 +18,9 @@ export default function Navbar() {
           <Link className="opacity-80 hover:opacity-100" href="/resume">
             Resume
           </Link>
+          <Link className="opacity-80 hover:opacity-100" href="/portfolio">
+            Portfolio
+          </Link>
           <Link className="opacity-80 hover:opacity-100" href="/contact">
             Contact Me
           </Link>

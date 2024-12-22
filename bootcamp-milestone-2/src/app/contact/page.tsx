@@ -1,7 +1,7 @@
 export default function Contact() {
   return (
     <div className="px-40 py-20 min-h-screen">
-      <h1 className="text-4xl font-bold">Contact</h1>
+      <h1 className="text-2xl font-bold">Contact</h1>
       <form id="contact-form" className="flex flex-col gap-2 pt-5">
         <label htmlFor="name">Name</label>
         <input
@@ -28,7 +28,11 @@ export default function Contact() {
           placeholder="Message"
           required
         ></textarea>
-        <input type="submit" value="Submit" className="border-black border-2 w-max p-1 rounded" />
+        <input
+          type="submit"
+          value="Submit"
+          className="border-black border-2 w-max p-1 rounded"
+        />
       </form>
     </div>
   );

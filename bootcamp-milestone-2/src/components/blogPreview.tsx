@@ -12,9 +12,12 @@ export default function BlogPreview({
   name: string;
   description: string;
   image: string;
-  posted: string;
+  posted: Date;
   slug: string;
 }) {
+  // const options = { year: "numeric", month: "long", day: "numeric" };
+  // const customString = posted.toLocaleDateString("en-US", options);
+
   return (
     <div className="my-5 w-max items-center text-center border-2 border-black">
       <div className="pt-2">
@@ -26,7 +29,7 @@ export default function BlogPreview({
         <Image src={image} width={300} height={300} alt="Main Picture" />
         <div className="pt-2">
           <p className="font-semibold">{description}</p>
-          <p className="font-semibold">{posted}</p>
+          <p className="font-semibold">{posted.toDateString()}</p>
         </div>
       </div>
     </div>
