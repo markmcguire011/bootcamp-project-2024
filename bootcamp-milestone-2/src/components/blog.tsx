@@ -1,26 +1,30 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Blog from "@/database/blogSchema";
+import Comment from "@/components/comment";
 
-export default function Blog({
-  name,
-  description,
-  image,
-  posted,
-}: {
-  name: string;
-  description: string;
-  image: string;
-  posted: Date;
-}) {
+function parseCommentTime(time: string | Date) {
+  const dateObject = typeof time === "string" ? new Date(time) : time;
+
   return (
-    <div className="px-40 my-5 w-max min-h-screen">
-      <h1 className="text-4xl font-bold">{name}</h1>
-      <p className="font-semibold">{posted.toString()}</p>
-      <Image src={image} width={300} height={300} alt="Blog Picture" />
+    dateObject.getMonth() +
+    "-" +
+    dateObject.getDay() +
+    "-" +
+    dateObject.getFullYear()
+  );
+}
+
+export default function BlogPage({ blog }: { blog: Blog }) {
+  return (
+    <div className="my-5 w-max flex flex-col gap-2">
+      <h1 className="text-4xl font-bold">{blog.title}</h1>
+      <p className="font-semibold">{parseCommentTime(blog.date)}</p>
+      <Image src={blog.image} width={300} height={300} alt={blog.imageAlt} />
       <div className="py-2">
         <div className="pt-2">
-          <p>{description}</p>
+          <p>{blog.text}</p>
         </div>
       </div>
     </div>
