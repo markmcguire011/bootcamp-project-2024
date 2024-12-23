@@ -7,18 +7,16 @@ export default function Blog({
   description,
   image,
   posted,
-  slug,
 }: {
   name: string;
   description: string;
   image: string;
-  posted: string;
-  slug: string;
+  posted: Date;
 }) {
   return (
     <div className="px-40 my-5 w-max min-h-screen">
       <h1 className="text-4xl font-bold">{name}</h1>
-      <h1>{posted}</h1>
+      <p className="font-semibold">{posted.toString()}</p>
       <Image src={image} width={300} height={300} alt="Blog Picture" />
       <div className="py-2">
         <div className="pt-2">
