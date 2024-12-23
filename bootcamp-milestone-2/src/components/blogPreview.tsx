@@ -19,19 +19,19 @@ export default function BlogPreview({
   // const customString = posted.toLocaleDateString("en-US", options);
 
   return (
-    <div className="my-5 w-max items-center text-center border-2 border-black">
-      <div className="pt-2">
-        <Link className="text-xl font-semibold" href={"blogs/" + slug}>
-          {name}
-        </Link>
-      </div>
-      <div className="py-2">
-        <Image src={image} width={300} height={300} alt="Main Picture" />
+    <Link href={"blogs/" + slug}>
+      <div className="my-5 w-max items-center text-center border-2 border-black rounded">
         <div className="pt-2">
-          <p className="font-semibold">{description}</p>
-          <p className="font-semibold">{posted.toDateString()}</p>
+          <h1 className="text-xl font-semibold">{name}</h1>
+        </div>
+        <div className="py-2">
+          <Image src={image} width={300} height={300} alt="Main Picture" />
+          <div className="pt-2">
+            <p className="font-semibold">{description}</p>
+            <p className="font-semibold">{posted.toDateString()}</p>
+          </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
