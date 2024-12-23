@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Home() {
+export default function Resume() {
   return (
     <div className="px-40 py-20 min-h-screen">
       <h1 className="font-bold text-4xl pb-4">Resume</h1>

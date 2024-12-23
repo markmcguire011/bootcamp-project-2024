@@ -1,4 +1,4 @@
-import { type MComment } from "@/database/commentSchema";
+import { MComment } from "@/database/blogSchema";
 
 type CommentProps = {
   comment: MComment;

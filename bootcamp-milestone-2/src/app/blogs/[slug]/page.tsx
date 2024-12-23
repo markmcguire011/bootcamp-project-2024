@@ -2,7 +2,7 @@ import BlogPage from "@/components/blog";
 import Comment from "@/components/comment";
 import Link from "next/link";
 import Blog from "@/database/blogSchema";
-import { type MComment } from "@/database/commentSchema";
+import { type MComment } from "@/database/blogSchema"
 import { Key } from "react";
 
 type Props = {
