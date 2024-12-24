@@ -1,62 +1,44 @@
-import { type Blog } from "@/database/blogSchema";
-import blogSchema from "@/database/blogSchema";
-import connectDB from "@/database/db";
 import { NextRequest, NextResponse } from "next/server";
-import { MComment } from "@/database/blogSchema";
+import Blog from "@/database/blogSchema";
+import connectDB from "@/database/db";
 
-type IParams = {
-  params: {
-    slug: string;
-  };
-};
-
-export async function POST(req: NextRequest, { params }: IParams) {
+export async function POST(
+  request: NextRequest,
+  { params }: { params: { slug: string } }
+) {
   try {
     await connectDB();
-    const { slug } = await params;
 
-    // Parse the request body
-    const comment = await req.json();
+    const body = await request.json();
 
-    // Validate body
-    if (!comment || !comment.user || !comment.comment) {
+    if (!body.user || !body.comment) {
       return NextResponse.json(
-        { error: "Information Missing" },
+        { error: "Missing required fields" },
         { status: 400 }
       );
     }
 
-    // Create the new comment object
-    const newComment: MComment = {
-      user: comment.user,
-      comment: comment.comment,
-      time: new Date(),
-    };
-
-    console.log(newComment);
-
-    const blog: Blog = await blogSchema
-      .findOneAndUpdate(
-        { slug },
-        {
-          $push: {
-            comments: newComment,
+    const blog = await Blog.findOneAndUpdate(
+      { slug: params.slug },
+      {
+        $push: {
+          comments: {
+            user: body.user,
+            comment: body.comment,
+            time: new Date(),
           },
         },
-        { new: true }
-      )
-      .orFail();
-
-    console.log("Verified updated document:", blog);
-
-    console.log(blog.comments);
-
-    return NextResponse.json(
-      { message: "Comment added successfully", comment: newComment },
-      { status: 200 }
+      },
+      { new: true }
     );
+
+    if (!blog) {
+      return NextResponse.json({ error: "Blog not found" }, { status: 404 });
+    }
+
+    return NextResponse.json(blog, { status: 200 });
   } catch (error) {
-    console.error("Error adding comment:", error);
+    console.error("Error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

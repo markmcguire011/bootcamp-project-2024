@@ -1,44 +1,39 @@
 import mongoose, { Schema } from "mongoose";
 
-export type Blog = {
-  title: string;
-  slug: string;
-  date: Date;
-  description: string;
-  text?: string;
-  image: string;
-  imageAlt?: string;
-  comments?: MComment[];
-};
-
-export type MComment = {
+export type IComment = {
   user: string;
   comment: string;
   time: Date;
 };
 
-const commentSchema = new Schema<MComment>({
+export type Blog = {
+  title: string;
+  slug: string;
+  date: Date;
+  description: string;
+  content: string;
+  image: string;
+  imageAlt: string;
+  comments: IComment[];
+};
+
+const commentSchema = new Schema<IComment>({
   user: { type: String, required: true },
   comment: { type: String, required: true },
-  time: { type: Date, required: true, default: new Date() },
+  time: { type: Date, default: Date.now, required: true },
 });
 
 const blogSchema = new Schema<Blog>({
   title: { type: String, required: true },
-  slug: { type: String, required: true },
-  date: { type: Date, required: false, default: new Date() },
+  slug: { type: String, required: true, unique: true },
+  date: { type: Date, default: Date.now },
   description: { type: String, required: true },
-  text: { type: String, required: true },
+  content: { type: String, required: true },
   image: { type: String, required: true },
   imageAlt: { type: String, required: true },
-  comments: {
-    user: { type: String, required: true },
-    comment: { type: String, required: true },
-    time: { type: Date, default: Date.now },
-  },
+  comments: [commentSchema],
 });
 
-const BlogModel =
-  mongoose.models["blogs"] || mongoose.model("blogs", blogSchema);
+const Blog = mongoose.models.Blog || mongoose.model("Blog", blogSchema);
 
-export default BlogModel;
+export default Blog;
