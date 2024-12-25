@@ -1,7 +1,6 @@
 import ProjectPreview from "@/components/projectPreview";
 import connectDB from "@/database/db";
 import Project from "@/database/projectSchema";
-import Link from "next/link";
 
 async function getProjects() {
   await connectDB(); // function from db.ts before
@@ -24,16 +23,7 @@ export default async function Portfolio() {
       <h1 className="text-2xl font-bold">Portfolio</h1>
       <div>
         {projects
-          ? projects.map((project) => (
-              <ProjectPreview
-                title={project.title}
-                description={project.description}
-                image={project.image}
-                imageAlt={project.imageAlt}
-                link={project.link}
-                key={project.title}
-              />
-            ))
+          ? projects.map((project) => <ProjectPreview project={project} />)
           : null}
       </div>
     </div>
