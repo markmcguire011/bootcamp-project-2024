@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Resume() {
   return (
     <div className="px-40 py-20 min-h-screen">
-      <h1 className="font-bold text-4xl pb-4">Resume</h1>
+      <h1 className="font-bold text-2xl pb-4">Resume</h1>
       <Link
         href="Mark_McGuire_Resume.pdf"
         className="flex gap-1 w-max border-2 border-black p-2"
