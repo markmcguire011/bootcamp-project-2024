@@ -9,10 +9,11 @@ type Props = {
   params: { slug: string };
 };
 
-async function getBlog(slug: string) {
+async function getBlog({ params }: Props) {
   try {
     // This fetches the blog from an api endpoint that would GET the blog
-    const res = await fetch(`http://localhost:3000/api/Blogs/${slug}`, {
+    const fetchedParams = await params
+    const res = await fetch(`http://localhost:3000/api/Blogs/${fetchedParams.slug}`, {
       cache: "no-store",
     });
     // This checks that the GET request was successful
@@ -31,8 +32,7 @@ async function getBlog(slug: string) {
 }
 
 export default async function BlogContent({ params }: Props) {
-  const resolvedParams = await params;
-  const blog = await getBlog(resolvedParams.slug);
+  const blog = await getBlog({ params });
 
   if (blog) {
     return (

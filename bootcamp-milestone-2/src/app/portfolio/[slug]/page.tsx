@@ -9,12 +9,16 @@ type Props = {
   params: { slug: string };
 };
 
-async function getProject(slug: string) {
+async function getProject({ params }: Props) {
   try {
     // This fetches the project from an api endpoint that would GET the project
-    const res = await fetch(`http://localhost:3000/api/Projects/${slug}`, {
-      cache: "no-store",
-    });
+    const fetchedParams = await params;
+    const res = await fetch(
+      `http://localhost:3000/api/Projects/${fetchedParams.slug}`,
+      {
+        cache: "no-store",
+      }
+    );
     // This checks that the GET request was successful
     if (!res.ok) {
       throw new Error("Failed to fetch project");
@@ -28,8 +32,7 @@ async function getProject(slug: string) {
 }
 
 export default async function ProjectContent({ params }: Props) {
-  const resolvedParams = await params;
-  const project = await getProject(resolvedParams.slug);
+  const project = await getProject({ params });
 
   if (project) {
     return (
