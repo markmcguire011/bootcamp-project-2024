@@ -6,16 +6,19 @@ import { IComment } from "@/database/blogSchema";
 import { Key } from "react";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 async function getBlog({ params }: Props) {
   try {
     // This fetches the blog from an api endpoint that would GET the blog
-    const fetchedParams = await params
-    const res = await fetch(`http://localhost:3000/api/Blogs/${fetchedParams.slug}`, {
-      cache: "no-store",
-    });
+    const fetchedParams = await params;
+    const res = await fetch(
+      `http://localhost:3000/api/Blogs/${fetchedParams.slug}`,
+      {
+        cache: "no-store",
+      }
+    );
     // This checks that the GET request was successful
     if (!res.ok) {
       throw new Error("Failed to fetch blog");

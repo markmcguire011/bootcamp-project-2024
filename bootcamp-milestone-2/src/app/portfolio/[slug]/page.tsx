@@ -6,7 +6,7 @@ import { IComment } from "@/database/blogSchema";
 import { Key } from "react";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 async function getProject({ params }: Props) {
