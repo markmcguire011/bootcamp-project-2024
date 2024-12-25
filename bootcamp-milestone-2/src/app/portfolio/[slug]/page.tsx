@@ -14,7 +14,7 @@ async function getProject({ params }: Props) {
     // This fetches the project from an api endpoint that would GET the project
     const fetchedParams = await params;
     const res = await fetch(
-      `http://localhost:3000/api/Projects/${fetchedParams.slug}`,
+      `/api/Projects/${fetchedParams.slug}`,
       {
         cache: "no-store",
       }

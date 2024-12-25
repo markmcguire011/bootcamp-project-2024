@@ -23,7 +23,9 @@ export default async function Portfolio() {
       <h1 className="text-2xl font-bold">Portfolio</h1>
       <div>
         {projects
-          ? projects.map((project) => <ProjectPreview project={project} key={project.slug} />)
+          ? projects.map((project) => (
+              <ProjectPreview project={project} key={project.slug} />
+            ))
           : null}
       </div>
     </div>

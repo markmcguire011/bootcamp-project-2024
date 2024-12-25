@@ -14,7 +14,7 @@ async function getBlog({ params }: Props) {
     // This fetches the blog from an api endpoint that would GET the blog
     const fetchedParams = await params;
     const res = await fetch(
-      `http://localhost:3000/api/Blogs/${fetchedParams.slug}`,
+      `/api/Blogs/${fetchedParams.slug}`,
       {
         cache: "no-store",
       }
