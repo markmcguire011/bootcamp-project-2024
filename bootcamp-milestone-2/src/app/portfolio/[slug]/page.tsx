@@ -1,5 +1,6 @@
 import ProjectPage from "@/components/project";
 import Comment from "@/components/comment";
+import AddComment from "@/components/addComment";
 import Link from "next/link";
 import { IComment } from "@/database/blogSchema";
 import { Key } from "react";
@@ -35,6 +36,8 @@ export default async function ProjectContent({ params }: Props) {
       <div className="px-40 py-20 min-h-screen">
         <ProjectPage project={project}></ProjectPage>
         <div className="bg-black h-[3px] rounded my-10"></div>
+        <h1 className="font-semibold">Add a comment</h1>
+        <AddComment slug={project.slug} projOrBlog="project"></AddComment>
         <h1 className="font-semibold">Comments</h1>
         {project.comments.map(
           (comment: IComment, index: Key | null | undefined) => (

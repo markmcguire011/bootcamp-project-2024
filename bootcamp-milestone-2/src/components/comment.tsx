@@ -1,7 +1,7 @@
-import { MComment } from "@/database/blogSchema";
+import { IComment } from "@/database/blogSchema";
 
 type CommentProps = {
-  comment: MComment;
+  comment: IComment;
 };
 
 function parseCommentTime(time: string | Date) {
@@ -18,7 +18,7 @@ function parseCommentTime(time: string | Date) {
 
 function Comment({ comment }: CommentProps) {
   return (
-    <div className="shadow-sm my-5 p-3 w-fit border-[1px] border-black/5 bg-black/5 rounded-md">
+    <div className="shadow-sm my-5 p-3 w-fit border-[1px] border-black rounded-md">
       <h4 className="font-semibold">{comment.user}</h4>
       <p>{comment.comment}</p>
       <span className="text-sm">{parseCommentTime(comment.time)}</span>

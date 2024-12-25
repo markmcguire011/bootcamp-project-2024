@@ -8,6 +8,7 @@ export async function POST(
 ) {
   try {
     await connectDB();
+    const { slug } = await params;
 
     const body = await request.json();
 
@@ -19,7 +20,7 @@ export async function POST(
     }
 
     const blog = await Blog.findOneAndUpdate(
-      { slug: params.slug },
+      { slug: slug },
       {
         $push: {
           comments: {
