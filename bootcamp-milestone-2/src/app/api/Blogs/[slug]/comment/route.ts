@@ -8,7 +8,10 @@ type IParams = {
   };
 };
 
-export async function POST(request: NextRequest, { params }: IParams) {
+export async function POST(
+  request: NextRequest,
+  { params }: { params: { slug: string } }
+) {
   try {
     await connectDB();
     const { slug } = await params;
