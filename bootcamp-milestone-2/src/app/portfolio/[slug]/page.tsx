@@ -14,7 +14,7 @@ async function getProject({ params }: Props) {
     // This fetches the project from an api endpoint that would GET the project
     const fetchedParams = await params;
     const res = await fetch(
-      `/api/Projects/${fetchedParams.slug}`,
+      `https://bootcamp-project-2024-six.vercel.app/api/Projects/${fetchedParams.slug}`,
       {
         cache: "no-store",
       }

@@ -14,7 +14,7 @@ async function getBlog({ params }: Props) {
     // This fetches the blog from an api endpoint that would GET the blog
     const fetchedParams = await params;
     const res = await fetch(
-      `/api/Blogs/${fetchedParams.slug}`,
+      `https://bootcamp-project-2024-six.vercel.app/api/Blogs/${fetchedParams.slug}`,
       {
         cache: "no-store",
       }
