@@ -4,7 +4,7 @@ import Link from "next/link";
 import { type Blog } from "@/database/blogSchema";
 import Comment from "@/components/comment";
 
-function parseCommentTime(time: string | Date) {
+export function parseCommentTime(time: string | Date) {
   const dateObject = typeof time === "string" ? new Date(time) : time;
 
   return (

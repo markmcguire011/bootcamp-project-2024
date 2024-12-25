@@ -1,8 +1,7 @@
 import BlogPage from "@/components/blog";
 import Comment from "@/components/comment";
 import Link from "next/link";
-import Blog from "@/database/blogSchema";
-import { type MComment } from "@/database/blogSchema"
+import { IComment } from "@/database/blogSchema";
 import { Key } from "react";
 
 type Props = {
@@ -41,7 +40,7 @@ export default async function BlogContent({ params }: Props) {
         <div className="bg-black h-[3px] rounded my-10"></div>
         <h1 className="font-semibold">Comments</h1>
         {blog.comments.map(
-          (comment: MComment, index: Key | null | undefined) => (
+          (comment: IComment, index: Key | null | undefined) => (
             <Comment key={index} comment={comment} />
           )
         )}

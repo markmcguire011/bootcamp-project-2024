@@ -17,7 +17,7 @@ export type Blog = {
   comments: IComment[];
 };
 
-const commentSchema = new Schema<IComment>({
+export const commentSchema = new Schema<IComment>({
   user: { type: String, required: true },
   comment: { type: String, required: true },
   time: { type: Date, default: Date.now, required: true },
