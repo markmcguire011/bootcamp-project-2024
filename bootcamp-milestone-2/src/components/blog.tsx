@@ -1,8 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { type Blog } from "@/database/blogSchema";
-import Comment from "@/components/comment";
 
 export function parseCommentTime(time: string | Date) {
   const dateObject = typeof time === "string" ? new Date(time) : time;

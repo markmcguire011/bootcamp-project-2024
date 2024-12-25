@@ -10,9 +10,9 @@ export default function Home() {
         </div>
         <div>
           <p className="py-2">
-            Hi I'm <strong>Mark</strong>, a 2nd year <em>CS major</em>{" "}
-            passionate about technology and making an impact. When I'm not
-            working on my projects you'll probably find me out on a{" "}
+            Hi I&apos;m <strong>Mark</strong>, a 2nd year <em>CS major</em>{" "}
+            passionate about technology and making an impact. When I&apos;m not
+            working on my projects you&apos;ll probably find me out on a{" "}
             <strong>run</strong>, playing <strong>basketball</strong>, reading
             up on <strong>history</strong>, or researching my{" "}
             <strong>next project</strong>!

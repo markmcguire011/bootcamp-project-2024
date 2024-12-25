@@ -11,7 +11,7 @@ export default function Contact() {
 
   const [status, setStatus] = useState("");
 
-  const handleChange = (e: { target: { name: any; value: any; }; }) => {
+  const handleChange = (e: { target: { name: string; value: string } }) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
@@ -19,7 +19,7 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
 
     const templateParams = {

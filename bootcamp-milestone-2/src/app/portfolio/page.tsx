@@ -10,7 +10,7 @@ async function getProjects() {
     const projects = await Project.find().sort({ date: -1 }).orFail();
     // send a response as the blogs as the message
     return projects;
-  } catch (err) {
+  } catch {
     return null;
   }
 }
@@ -23,7 +23,7 @@ export default async function Portfolio() {
       <h1 className="text-2xl font-bold">Portfolio</h1>
       <div>
         {projects
-          ? projects.map((project) => <ProjectPreview project={project} />)
+          ? projects.map((project) => <ProjectPreview project={project} key={project.slug} />)
           : null}
       </div>
     </div>

@@ -21,7 +21,7 @@ export default async function Blogs() {
     <div className="px-40 py-20 min-h-screen">
       <h1 className="text-2xl font-bold">Blogs</h1>
       {blogs.map((blog) => (
-        <BlogPreview blog={blog} />
+        <BlogPreview blog={blog} key={blog.slug} />
       ))}
     </div>
   );
