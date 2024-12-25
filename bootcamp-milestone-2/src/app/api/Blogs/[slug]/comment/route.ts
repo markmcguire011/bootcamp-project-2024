@@ -2,12 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import Blog from "@/database/blogSchema";
 import connectDB from "@/database/db";
 
-type IParams = {
-  params: {
-    slug: string;
-  };
-};
-
 export async function POST(
   request: NextRequest,
   { params }: { params: { slug: string } }
