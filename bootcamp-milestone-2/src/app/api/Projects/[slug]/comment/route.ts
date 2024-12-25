@@ -2,18 +2,12 @@ import { NextRequest, NextResponse } from "next/server";
 import Project from "@/database/projectSchema";
 import connectDB from "@/database/db";
 
-type IParams = {
-  params: {
-    slug: string;
-  };
-};
-
-export async function POST(request: NextRequest, { params }: IParams) {
+export async function POST(request: NextRequest) {
   try {
     await connectDB();
-    const { slug } = await params;
 
     const body = await request.json();
+    const slug = body.slug;
 
     if (!body.user || !body.comment) {
       return NextResponse.json(

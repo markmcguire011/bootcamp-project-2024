@@ -5,6 +5,7 @@ import { useState, FormEvent, ChangeEvent } from "react";
 interface CommentFormData {
   user: string;
   comment: string;
+  slug: string;
 }
 
 interface AddCommentProps {
@@ -26,6 +27,7 @@ const AddComment = ({ slug, projOrBlog, onCommentAdded }: AddCommentProps) => {
   const [formData, setFormData] = useState<CommentFormData>({
     user: "",
     comment: "",
+    slug: slug
   });
   const [status, setStatus] = useState<StatusType>("idle");
   const router = useRouter();
@@ -49,7 +51,7 @@ const AddComment = ({ slug, projOrBlog, onCommentAdded }: AddCommentProps) => {
       }
 
       const data = await response.json();
-      setFormData({ user: "", comment: "" });
+      setFormData({ user: "", comment: "", slug: slug});
       setStatus("success");
       router.refresh();
       if (onCommentAdded) {
